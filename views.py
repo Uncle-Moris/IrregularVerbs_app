@@ -18,3 +18,6 @@ class WordInInfinitive(Word):
     def check_word(self):
         pass
 
+
+
+
