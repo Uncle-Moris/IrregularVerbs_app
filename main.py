@@ -1,40 +1,15 @@
-from json import load
-from random import shuffle, randint
-from abc import abstractmethod, ABC
+from words import Word
 
+while True:
+    START = input("Co chcesz zrobić")
 
-class Word:
-    def __init__(self, file: str):
-        self.file = file
+    if START == "OK":
+        word = Word('inregular_verbs.json')
 
-    def get_words(self):
-        with open(self.file, 'r') as file:
-            data = load(file)
-            shuffle(data)
-        return data.pop[0]
-
-    def check_word(self):
-        self.get_words()
-        infinitive = self.get_words()['Infinitive']
-        past_simple = self.get_words()['Past Simple']
-        past_participle = self.get_words()['Past Participle']
-
-
-
-class Game:
-    pass
-
-
-with open('inregular_verbs.json') as verbs:
-    data = load(verbs)
-    print(type(data))
-    shuffle(data)
-    print(len(data))
-    print(data)
-    p = data.pop(0)
-    print(p[ 'Past Participle'])
-
-
-
-# if __name__ == "__main__":
-
+        words = word.get_words()
+        while True:
+            print(f'twoje słowo to {words["Infinitive"]}')
+            word2 = input("Podaj 2 formę")
+            if word2 == words['Past Simple']:
+                print('bardzo dobrze')
+                break
